@@ -5,3 +5,10 @@ district_adcode | |接口请求行政区adcode|int | 110101|||1
 keyword |  |接口请求关键词 |varchar(40) | "express"|||1
 POI_count | count |该区该关键字返回结果数量(其实不准确，会有小出入，测试过) |int | "105"|int()||1
 snapshot_time|---|爬取时间(零时区)|datetime|"2019-12-13 17:04:14"|||1
+rating|biz_ext-rating|评分(仅存在于餐饮、酒店、景点、影院类POI之下)|float|"4.0"|float()|[]
+cost|biz_ext-cost|人均消费(仅存在于餐饮、酒店、景点、影院类POI之下)|float|"4.0"|float()|[]
+
+<!--
+功能解释
+1. '-'后字段是其前的子字段
+-->
