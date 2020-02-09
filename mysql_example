@@ -1,0 +1,8 @@
+CREATE TABLE `POI_count` (
+  `id` int NOT NULL AUTO_INCREMENT COMMENT '自增主键',
+  `district_adcode` int DEFAULT NULL COMMENT '接口请求行政区adcode',
+  `keyword` varchar DEFAULT NULL COMMENT '接口请求关键词',
+  `POI_count` int DEFAULT NULL COMMENT '该区该关键字返回结果数量',
+  `snapshot_time` datetime DEFAULT NULL COMMENT '爬取时间(零时区)',
+  PRIMARY KEY (`id`),
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin COMMENT='POI节点数据';
