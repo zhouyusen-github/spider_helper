@@ -1,0 +1,15 @@
+database_field_name|json_field_name|meaning|database_field_type|example|preprocessing|error_return|allow_null
+数据库字段名 | 接口字段名 | 意义 | 数据库字段类型 | 例子 | 预处理 |异常返回| 是否允许为null
+---|---|---|---|---|---|---|---
+id||自增主键|int||||0
+district_adcode | |接口请求行政区adcode|int | 110101|safe_str()||0
+keyword |  |接口请求关键词 |varchar(40) | "express"|safe_str()||0
+POI_count | count |该区该关键字返回结果数量(其实不准确，会有小出入，测试过) |safe_int() | "105"|int()||0
+snapshot_time|---|爬取时间(零时区)|datetime|"2019-12-13 17:04:14"|||0
+rating|biz_ext-rating|评分(仅存在于餐饮、酒店、景点、影院类POI之下)|float|"4.0"|safe_float()|[]|1
+cost|biz_ext-cost|人均消费(仅存在于餐饮、酒店、景点、影院类POI之下)|float|"4.0"|safe_float()|[]|1
+
+<!--
+功能解释
+1. '-'后字段是其前的子字段
+-->
