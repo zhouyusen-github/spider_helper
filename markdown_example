@@ -1,7 +1,7 @@
 id||自增主键|int||||0
 district_adcode | |接口请求行政区adcode|int | 110101|safe_str()||0
 keyword |  |接口请求关键词 |varchar(40) | "express"|safe_str()||0
-POI_count | count |该区该关键字返回结果数量(其实不准确，会有小出入，测试过) |safe_int() | "105"|int()||0
+POI_count | count |该区该关键字返回结果数量(其实不准确，会有小出入，测试过) |int() | "105"|safe_int() ||0
 rating|biz_ext-rating|评分(仅存在于餐饮、酒店、景点、影院类POI之下)|float|"4.0"|safe_float()|[]|1
 cost|biz_ext-cost|人均消费(仅存在于餐饮、酒店、景点、影院类POI之下)|float|"4.0"|safe_float()|[]|1
 cost|biz_ext-test1-test2|子子字段测试|float|"4.0"|safe_float()|[]|1
