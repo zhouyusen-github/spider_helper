@@ -35,11 +35,9 @@ print("CREATE TABLE `{table}` (".format(table=table_name))
 for line in f.readlines():
     strings = clean_split_line(line)
     database_field_name = strings[0]
-    json_field_name = strings[1]
     meaning = strings[2]
     database_field_type = strings[3]
-    preprocessing = strings[5]
-    allow_null = strings[7]
+    allow_null = strings[6]
     if int(allow_null):
         allow_null_word = 'DEFAULT'
     else:

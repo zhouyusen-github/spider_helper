@@ -21,6 +21,21 @@ def clean_split_line(line):
     return strings
 
 
+def preprocessing_identify(database_field_type):
+    preprocessing_string = 'safe_str()'
+    if database_field_type == 'int':
+        preprocessing_string = 'safe_int()'
+    elif database_field_type == 'float':
+        preprocessing_string = 'safe_float()'
+    elif database_field_type == 'datetime':
+        preprocessing_string = 'safe_datetime()'
+    elif database_field_type == 'date':
+        preprocessing_string = 'safe_date()'
+    elif database_field_type == 'time':
+        preprocessing_string = 'safe_time()'
+    return preprocessing_string
+
+
 f = open('markdown_example', encoding='utf-8')
 json_name = "POI"  # 要解析的json在你的代码中定义的名字
 separation_character = '-'  # 用于分割字段与子字段的字符
@@ -29,10 +44,8 @@ for line in f.readlines():
     strings = clean_split_line(line)
     database_field_name = strings[0]
     json_field_name = strings[1]
-    meaning = strings[2]
     database_field_type = strings[3]
-    preprocessing = strings[5]
-    allow_null = strings[7]
+    preprocessing = preprocessing_identify(database_field_type)
 
     if database_field_name == 'snapshot_time':
         print("'snapshot_time': datetime.utcnow()")

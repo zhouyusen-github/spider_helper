@@ -8,3 +8,6 @@
 2. 根据多次请求返回总结，修改markdown
 3. markdown_to_python生成python解析接口字段代码
 4. markdown_to_mysql生成mysql建表代码
+
+更新
+1.预处理字段删除了，因为确定了类型就肯定要进行对应预处理以防万一
